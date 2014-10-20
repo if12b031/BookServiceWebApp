@@ -10,14 +10,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="book")
-@NamedQuery(name="Book.selectAll", query="SELECT n FROM book n")
+@NamedQuery(name="Book.selectAll", query="SELECT n FROM Book n")
 public class Book {
 	
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", isbn=" + isbn + ", title=" + title
 				+ ", subtitle=" + subtitle + ", description=" + description
-				+ ", authors=" + authors + ", publisher=" + publisher
+				/*+ ", authors=" + authors*/ /*+ ", publisher=" + publisher*/
 				 + ", pages=" + pages + "]";
 	}
 
@@ -27,8 +27,8 @@ public class Book {
 	private String title;
 	private String subtitle;
 	private String description;
-	private List<Author> authors;
-	private Publisher publisher;
+	//private List<Author> authors;
+	//private Publisher publisher;
 	private int pages;
 	
 	public Book() {}
@@ -42,8 +42,8 @@ public class Book {
 		this.title = title;
 		this.subtitle = subtitle;
 		this.description = description;
-		this.authors = authors;
-		this.publisher = publisher;
+		//this.authors = authors;
+		//this.publisher = publisher;
 		this.pages = pages;
 	}
 
@@ -89,21 +89,21 @@ public class Book {
 		this.description = description;
 	}
 
-	public List<Author> getAuthors() {
-		return authors;
-	}
+//	public List<Author> getAuthors() {
+//		return authors;
+//	}
+//
+//	public void setAuthors(List<Author> authors) {
+//		this.authors = authors;
+//	}
 
-	public void setAuthors(List<Author> authors) {
-		this.authors = authors;
-	}
-
-	public Publisher getPublisher() {
-		return publisher;
-	}
-
-	public void setPublisher(Publisher publisher) {
-		this.publisher = publisher;
-	}
+//	public Publisher getPublisher() {
+//		return publisher;
+//	}
+//
+//	public void setPublisher(Publisher publisher) {
+//		this.publisher = publisher;
+//	}
 
 	public int getPages() {
 		return pages;

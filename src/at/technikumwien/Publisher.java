@@ -6,9 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="publisher")
-@NamedQuery(name="Publisher.selectAll", query="SELECT n FROM publisher n")
+//@Entity
+//@Table(name="publisher")
+//@NamedQuery(name="Publisher.selectAll", query="SELECT n FROM Publisher n")
 public class Publisher {
 	
 	@Id @GeneratedValue

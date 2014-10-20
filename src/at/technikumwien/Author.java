@@ -8,9 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="author")
-@NamedQuery(name="Author.selectAll", query="SELECT n FROM author n")
+//@Entity
+//@Table(name="author")
+//@NamedQuery(name="Author.selectAll", query="SELECT n FROM Author n")
 public class Author {
 	
 	
