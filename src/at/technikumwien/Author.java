@@ -2,11 +2,8 @@ package at.technikumwien;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
 
 //@Entity
 //@Table(name="author")
