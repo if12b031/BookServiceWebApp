@@ -5,5 +5,7 @@
 	<persistence-unit name="BookServiceWebApp">
 	    <jta-data-source>java:jboss/datasources/BookDS</jta-data-source>
 		<class>at.technikumwien.Book</class>
+		<class>at.technikumwien.Author</class>
+		<class>at.technikumwien.Publisher</class>
 	</persistence-unit>
 </persistence>
