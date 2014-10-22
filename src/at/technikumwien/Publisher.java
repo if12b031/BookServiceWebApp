@@ -1,11 +1,14 @@
 package at.technikumwien;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
-//@Entity
-//@Table(name="publisher")
-//@NamedQuery(name="Publisher.selectAll", query="SELECT n FROM Publisher n")
+@Entity
+@Table(name="publisher")
+@NamedQuery(name="Publisher.selectAll", query="SELECT n FROM Publisher n")
 public class Publisher {
 	
 	@Id @GeneratedValue
@@ -27,6 +30,13 @@ public class Publisher {
 		this.countryCode = countrycode;
 		this.streetNumber = streetNumber;
 		this.streetName = streetName;
+	}
+
+	@Override
+	public String toString() {
+		return "Publisher [id=" + id + ", name=" + name + ", postCode="
+				+ postCode + ", countryCode=" + countryCode + ", streetNumber="
+				+ streetNumber + ", streetName=" + streetName + "]";
 	}
 	
 //	SETTERS & GETTERS
@@ -77,8 +87,5 @@ public class Publisher {
 
 	public void setStreetName(String streetName) {
 		this.streetName = streetName;
-	}
-	
-	
-	
+	}	
 }

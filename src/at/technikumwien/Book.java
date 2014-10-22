@@ -13,22 +13,12 @@ import javax.persistence.Table;
 @NamedQuery(name="Book.selectAll", query="SELECT n FROM Book n")
 public class Book {
 	
-	@Override
-	public String toString() {
-		return "Book [id=" + id + ", isbn=" + isbn + ", title=" + title
-				+ ", subtitle=" + subtitle + ", description=" + description
-				/*+ ", authors=" + authors*/ /*+ ", publisher=" + publisher*/
-				 + ", pages=" + pages + "]";
-	}
-
 	@Id @GeneratedValue
 	private Long id;
 	private String isbn;
 	private String title;
 	private String subtitle;
 	private String description;
-	//private List<Author> authors;
-	//private Publisher publisher;
 	private int pages;
 	
 	public Book() {}
@@ -42,9 +32,14 @@ public class Book {
 		this.title = title;
 		this.subtitle = subtitle;
 		this.description = description;
-		//this.authors = authors;
-		//this.publisher = publisher;
 		this.pages = pages;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", isbn=" + isbn + ", title=" + title
+				+ ", subtitle=" + subtitle + ", description=" + description
+				+ ", pages=" + pages + "]";
 	}
 
 //	SETTER & GETTERS
@@ -89,22 +84,6 @@ public class Book {
 		this.description = description;
 	}
 
-//	public List<Author> getAuthors() {
-//		return authors;
-//	}
-//
-//	public void setAuthors(List<Author> authors) {
-//		this.authors = authors;
-//	}
-
-//	public Publisher getPublisher() {
-//		return publisher;
-//	}
-//
-//	public void setPublisher(Publisher publisher) {
-//		this.publisher = publisher;
-//	}
-
 	public int getPages() {
 		return pages;
 	}
@@ -112,8 +91,4 @@ public class Book {
 	public void setPages(int pages) {
 		this.pages = pages;
 	}
-	
-	
-	
-
 }

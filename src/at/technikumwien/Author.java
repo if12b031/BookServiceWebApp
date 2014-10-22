@@ -2,22 +2,16 @@ package at.technikumwien;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
-//@Entity
-//@Table(name="author")
-//@NamedQuery(name="Author.selectAll", query="SELECT n FROM Author n")
+@Entity
+@Table(name="author")
+@NamedQuery(name="Author.selectAll", query="SELECT n FROM Author n")
 public class Author {
-	
-	
-	@Override
-	public String toString() {
-		return "Author [id=" + id + ", title=" + title + ", firstName="
-				+ firstName + ", lastName=" + lastName + ", nationality="
-				+ nationality + ", birthday=" + birthday
-				+ "]";
-	}
 
 	@Id @GeneratedValue
 	private Long id;
@@ -38,6 +32,14 @@ public class Author {
 		this.lastName = lastName;
 		this.nationality = nationality;
 		this.birthday = birthday;
+	}
+
+	@Override
+	public String toString() {
+		return "Author [id=" + id + ", title=" + title + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", nationality="
+				+ nationality + ", birthday=" + birthday
+				+ "]";
 	}
 
 //	SETTERS & GETTERS
@@ -88,7 +90,5 @@ public class Author {
 
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
-	}
-	
-	
+	}	
 }

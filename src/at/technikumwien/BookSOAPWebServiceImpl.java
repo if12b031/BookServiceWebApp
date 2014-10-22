@@ -15,5 +15,15 @@ public class BookSOAPWebServiceImpl implements BookSOAPWebService {
 	public List<Book> getAllBooks() {
 		return bookService.getAllBooks();
 	}
+
+	@Override
+	public List<Author> getAllAuthors() {
+		return bookService.getAllAuthors();
+	}
+
+	@Override
+	public List<Publisher> getAllPublishers() {
+		return bookService.getAllPublishers();
+	}
 	
 }
