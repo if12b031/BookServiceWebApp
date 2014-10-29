@@ -5,6 +5,10 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -22,7 +26,15 @@ public class Book {
 	private String subtitle;
 	private String description;
 	private int pages;
+	@ManyToMany
+	@JoinTable(
+	      name="book2author",
+	      joinColumns={@JoinColumn(name="fk_book", referencedColumnName="id")},
+	      inverseJoinColumns={@JoinColumn(name="fk_author", referencedColumnName="id")})
 	private List<Author> authors;
+	@ManyToOne(optional=false)
+	@JoinColumn(
+			name="publisher", referencedColumnName="id")
 	private Publisher publisher;
 
 	public Book() {}
