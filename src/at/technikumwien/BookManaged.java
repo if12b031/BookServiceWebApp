@@ -10,10 +10,10 @@ import javax.inject.Named;
 @Named("appBook")
 public class BookManaged {
 	@Inject
-	BookService service;
+	BookService bookService;
 
 	public List<Book> getAllBooks() {
-		return service.getAllBooks();
+		return bookService.getAllBooks();
 	}
 
 }

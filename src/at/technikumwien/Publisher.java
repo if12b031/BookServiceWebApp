@@ -5,10 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="publisher")
-@NamedQuery(name="Publisher.selectAll", query="SELECT n FROM Publisher n")
+@NamedQuery(name="Publisher.selectAll", query="SELECT p FROM Publisher p")
+@XmlRootElement
 public class Publisher {
 	
 	@Id @GeneratedValue

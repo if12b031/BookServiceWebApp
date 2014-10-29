@@ -7,10 +7,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="author")
-@NamedQuery(name="Author.selectAll", query="SELECT n FROM Author n")
+@NamedQuery(name="Author.selectAll", query="SELECT a FROM Author a")
+@XmlRootElement
 public class Author {
 
 	@Id @GeneratedValue
