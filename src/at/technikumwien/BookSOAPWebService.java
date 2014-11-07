@@ -8,7 +8,7 @@ import javax.jws.WebService;
 
 @WebService
 public interface BookSOAPWebService {
-	@WebMethod(operationName="allBooks")
+	@WebMethod(operationName="getAllBooks")
 	public List<Book> getAllBooks();
 
 	@WebMethod(operationName="allAuthors")

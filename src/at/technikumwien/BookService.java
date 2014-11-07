@@ -1,5 +1,6 @@
 package at.technikumwien;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.LocalBean;
@@ -17,6 +18,12 @@ public class BookService {
 	
 	public List<Book> getAllBooks(){
 		return em.createNamedQuery("Book.selectAll", Book.class).getResultList();
+		/*List<Book> list = new ArrayList<Book>();
+		Book book = new Book();
+		book.setId(1L);
+		book.setIsbn("1111");
+		list.add(book);
+		return list;*/
 	}
 
 	public List<Author> getAllAuthors() {

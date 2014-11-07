@@ -1,0 +1,1 @@
+wsimport -s src-generated -p at.technikumwien.generated -Xnocompile http://localhost:8080/BookServiceWebApp/BookSOAPWebServiceImpl?wsdl

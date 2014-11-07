@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="lib/jquery.js"></script>
+<script>
+function sendRequest() {
+	$.ajax({
+		url: "http://localhost:8080/BookServiceWebApp/resources/books",
+		type: "GET",
+		headers: {          
+	    	Accept: "application/json"
+		},
+		success: function(list) {
+			//alert(value);
+			var html = "";
+			
+			for (var i = 0; i < list.lenght; i++){
+				var book = list[i];
+				html += "<li><a href='http://localhost:8080/BookServiceWebApp/resources/books/"+book.Id+"'></li>"
+			}
+			
+			html = "<ul>" + html + "</ul>";
+			
+			document.getElementById("books").innerHTML = html;
+		}
+	});
+}
+</script>
+</head>
+<body>
+<form>
+<input type="button" id="request" value="Request!" onclick="sendRequest();">
+</form>
+<div id="books"></div>
+</body>
+</html>
