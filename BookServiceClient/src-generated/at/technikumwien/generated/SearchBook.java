@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for searchBook complex type.
+ * <p>Java-Klasse für searchBook complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
  * &lt;complexType name="searchBook">
@@ -34,7 +34,7 @@ public class SearchBook {
     protected String bookTitle;
 
     /**
-     * Gets the value of the bookTitle property.
+     * Ruft den Wert der bookTitle-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class SearchBook {
     }
 
     /**
-     * Sets the value of the bookTitle property.
+     * Legt den Wert der bookTitle-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is

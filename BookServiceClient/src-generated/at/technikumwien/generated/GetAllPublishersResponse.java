@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for allBooksResponse complex type.
+ * <p>Java-Klasse für getAllPublishersResponse complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="allBooksResponse">
+ * &lt;complexType name="getAllPublishersResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://technikumwien.at/}book" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://technikumwien.at/}publisher" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,13 +29,13 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "allBooksResponse", propOrder = {
+@XmlType(name = "getAllPublishersResponse", propOrder = {
     "_return"
 })
-public class AllBooksResponse {
+public class GetAllPublishersResponse {
 
     @XmlElement(name = "return")
-    protected List<Book> _return;
+    protected List<Publisher> _return;
 
     /**
      * Gets the value of the return property.
@@ -55,13 +55,13 @@ public class AllBooksResponse {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Book }
+     * {@link Publisher }
      * 
      * 
      */
-    public List<Book> getReturn() {
+    public List<Publisher> getReturn() {
         if (_return == null) {
-            _return = new ArrayList<Book>();
+            _return = new ArrayList<Publisher>();
         }
         return this._return;
     }

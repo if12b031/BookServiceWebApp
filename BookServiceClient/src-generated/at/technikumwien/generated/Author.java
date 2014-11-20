@@ -9,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java class for author complex type.
+ * <p>Java-Klasse für author complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
  * &lt;complexType name="author">
@@ -52,7 +52,7 @@ public class Author {
     protected String title;
 
     /**
-     * Gets the value of the birthday property.
+     * Ruft den Wert der birthday-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -64,7 +64,7 @@ public class Author {
     }
 
     /**
-     * Sets the value of the birthday property.
+     * Legt den Wert der birthday-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class Author {
     }
 
     /**
-     * Gets the value of the firstName property.
+     * Ruft den Wert der firstName-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class Author {
     }
 
     /**
-     * Sets the value of the firstName property.
+     * Legt den Wert der firstName-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +100,7 @@ public class Author {
     }
 
     /**
-     * Gets the value of the id property.
+     * Ruft den Wert der id-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -112,7 +112,7 @@ public class Author {
     }
 
     /**
-     * Sets the value of the id property.
+     * Legt den Wert der id-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
@@ -124,7 +124,7 @@ public class Author {
     }
 
     /**
-     * Gets the value of the lastName property.
+     * Ruft den Wert der lastName-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -136,7 +136,7 @@ public class Author {
     }
 
     /**
-     * Sets the value of the lastName property.
+     * Legt den Wert der lastName-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
@@ -148,7 +148,7 @@ public class Author {
     }
 
     /**
-     * Gets the value of the nationality property.
+     * Ruft den Wert der nationality-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -160,7 +160,7 @@ public class Author {
     }
 
     /**
-     * Sets the value of the nationality property.
+     * Legt den Wert der nationality-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
@@ -172,7 +172,7 @@ public class Author {
     }
 
     /**
-     * Gets the value of the title property.
+     * Ruft den Wert der title-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -184,7 +184,7 @@ public class Author {
     }
 
     /**
-     * Sets the value of the title property.
+     * Legt den Wert der title-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is

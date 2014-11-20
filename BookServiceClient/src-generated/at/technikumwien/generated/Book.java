@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for book complex type.
+ * <p>Java-Klasse für book complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
  * &lt;complexType name="book">
@@ -89,7 +89,7 @@ public class Book {
     }
 
     /**
-     * Gets the value of the description property.
+     * Ruft den Wert der description-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -101,7 +101,7 @@ public class Book {
     }
 
     /**
-     * Sets the value of the description property.
+     * Legt den Wert der description-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +113,7 @@ public class Book {
     }
 
     /**
-     * Gets the value of the id property.
+     * Ruft den Wert der id-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -125,7 +125,7 @@ public class Book {
     }
 
     /**
-     * Sets the value of the id property.
+     * Legt den Wert der id-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
@@ -137,7 +137,7 @@ public class Book {
     }
 
     /**
-     * Gets the value of the isbn property.
+     * Ruft den Wert der isbn-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -149,7 +149,7 @@ public class Book {
     }
 
     /**
-     * Sets the value of the isbn property.
+     * Legt den Wert der isbn-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
@@ -161,7 +161,7 @@ public class Book {
     }
 
     /**
-     * Gets the value of the pages property.
+     * Ruft den Wert der pages-Eigenschaft ab.
      * 
      */
     public int getPages() {
@@ -169,7 +169,7 @@ public class Book {
     }
 
     /**
-     * Sets the value of the pages property.
+     * Legt den Wert der pages-Eigenschaft fest.
      * 
      */
     public void setPages(int value) {
@@ -177,7 +177,7 @@ public class Book {
     }
 
     /**
-     * Gets the value of the publisher property.
+     * Ruft den Wert der publisher-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -189,7 +189,7 @@ public class Book {
     }
 
     /**
-     * Sets the value of the publisher property.
+     * Legt den Wert der publisher-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
@@ -201,7 +201,7 @@ public class Book {
     }
 
     /**
-     * Gets the value of the subtitle property.
+     * Ruft den Wert der subtitle-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -213,7 +213,7 @@ public class Book {
     }
 
     /**
-     * Sets the value of the subtitle property.
+     * Legt den Wert der subtitle-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
@@ -225,7 +225,7 @@ public class Book {
     }
 
     /**
-     * Gets the value of the title property.
+     * Ruft den Wert der title-Eigenschaft ab.
      * 
      * @return
      *     possible object is
@@ -237,7 +237,7 @@ public class Book {
     }
 
     /**
-     * Sets the value of the title property.
+     * Legt den Wert der title-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is

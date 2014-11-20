@@ -1,6 +1,7 @@
 package at.technikumwien;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.LocalBean;
@@ -17,40 +18,46 @@ public class BookService {
 	private EntityManager em;
 	
 	public List<Book> getAllBooks(){
+		/* Insert an Author */
+		Author author = new Author(null, "Title", "Name", "Lastname", "AT", 'm', new Date());
+		em.persist(author);
+		/* Insert a Publisher */
+		Publisher publisher = new Publisher(null, "Publisher", "1220", "AT", "Street", "1");
+		em.persist(publisher);
+		/* Insert a Book*/
+		List<Author> authors = new ArrayList<Author>();
+		authors.add( em. find(Author.class, 1L)); // find Author with ID 1
+		Book book = new Book(null, "ISBN", "Booktitle", "BookSubtitle", "Description", 100, authors, em.find(Publisher.class, 1L));
+		insertBook(book);
+
 		return em.createNamedQuery("Book.selectAll", Book.class).getResultList();
-		/*List<Book> list = new ArrayList<Book>();
-		Book book = new Book();
-		book.setId(1L);
-		book.setIsbn("1111");
-		list.add(book);
-		return list;*/
 	}
 
 	public List<Author> getAllAuthors() {
-		return em.createNamedQuery("Publisher.selectAll", Author.class).getResultList();
+		return em.createNamedQuery("Author.selectAll", Author.class).getResultList();
 	}
 
 	public List<Publisher> getAllPublishers() {
-		return em.createNamedQuery("Authork.selectAll", Publisher.class).getResultList();
+		return em.createNamedQuery("Publisher.selectAll", Publisher.class).getResultList();
 	}
 
-	public boolean insertBook(Book b) {
-		if (!checkInsertBook(b)) {
+	public boolean insertBook(Book book) {
+		if (!checkInsertBook(book)) {
 			return false;
 		} else {
-			em.persist(b);
+			em.persist(book);
 			return true;
 		}
 	}
 
-	public boolean insertBooks(List<Book> b) {
-		for (int i = 0; i < b.size(); i++) {
-			if (!checkInsertBook(b.get(i))) {
+	public boolean insertBooks(List<Book> books) {
+		for (int i = 0; i < books.size(); i++) {
+			if (!checkInsertBook(books.get(i))) {
 				return false;
 			}
 		}
 		em.getTransaction().begin();
-		b.forEach((book) -> em.persist(book));
+		books.forEach((book) -> em.persist(book));
 		em.getTransaction().commit();
 		return true;
 	}
@@ -62,9 +69,9 @@ public class BookService {
 		return q.getResultList(); 
 	}
 
-	private boolean checkInsertBook(Book b){
-		List<Author> authors =  b.getAuthors();
-		Publisher publisher = b.getPublisher();
+	private boolean checkInsertBook(Book book){
+		List<Author> authors =  book.getAuthors();
+		Publisher publisher = book.getPublisher();
 		long countPublisher = 0;
 		long countFirstName = 0;
 		long countLastName = 0;

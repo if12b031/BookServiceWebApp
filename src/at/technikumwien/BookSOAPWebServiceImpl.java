@@ -27,13 +27,13 @@ public class BookSOAPWebServiceImpl implements BookSOAPWebService {
 	}
 
 	@Override
-	public boolean insertBook(Book b) {
-		return bookService.insertBook(b);
+	public boolean insertBook(Book book) {
+		return bookService.insertBook(book);
 	}
 
 	@Override
-	public boolean insertBooks(List<Book> b) {
-		return bookService.insertBooks(b);
+	public boolean insertBooks(List<Book> books) {
+		return bookService.insertBooks(books);
 	}
 
 	@Override

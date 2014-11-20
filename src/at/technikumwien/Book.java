@@ -3,7 +3,9 @@ package at.technikumwien;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -19,22 +21,22 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Book {
 	
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String isbn;
 	private String title;
 	private String subtitle;
 	private String description;
 	private int pages;
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 	      name="book2author",
-	      joinColumns={@JoinColumn(name="fk_book", referencedColumnName="id")},
-	      inverseJoinColumns={@JoinColumn(name="fk_author", referencedColumnName="id")})
+	      joinColumns=@JoinColumn(name="fk_book"),
+	      inverseJoinColumns=@JoinColumn(name="fk_author"))
 	private List<Author> authors;
-	@ManyToOne(optional=false)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(
-			name="publisher", referencedColumnName="id")
+			name="fk_publisher")
 	private Publisher publisher;
 
 	public Book() {}
