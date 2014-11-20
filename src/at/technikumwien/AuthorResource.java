@@ -21,54 +21,54 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
-@Path("/books")
-public class BookResource {
+@Path("/authors")
+public class AuthorResource {
 	@PersistenceContext
 	EntityManager em;
 	@Inject
-	BookService service;
+	AuthorService service;
 	@Context
 	UriInfo ui;
 
 	@GET
-	@Path("/{bookId}")
+	@Path("/{authorId}")
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	public Book getBook(@PathParam("bookId") Long bookId) {
-		return service.getBook(bookId);
+	public Author getAuthor(@PathParam("authorId") Long authorId) {
+		return service.getAuthor(authorId);
 	}
 	
 	@GET
 	@Path("/all")
 	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	public List<Book> getAllBooks() {
-		return service.getAllBooks();
+	public List<Author> getAllAuthors() {
+		return service.getAllAuthors();
 	}
 
 	@POST
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	public Response insertBook(Book book) {
-		service.insertBook(book);
+	public Response insertAuthor(Author author) {
+		service.insertAuthor(author);
 		URI newsURI = ui.getAbsolutePathBuilder()
-				.path(book.getId().toString())
+				.path(author.getId().toString())
 				.build();
 		
 		return Response.created(newsURI).build();
 	}
 
 	@PUT
-	@Path("/{bookId}")
+	@Path("/{authorId}")
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	public void updateBook(@PathParam("bookId") Long bookId, Book book) {
-		if (!service.updateBook(bookId, book)) {
+	public void updateAuthor(@PathParam("authorId") Long authorId, Author author) {
+		if (!service.updateAuthor(authorId, author)) {
 			throw new WebApplicationException(Status.NOT_FOUND);
 		}
 	}
 
 	@DELETE
-	@Path("/{bookId}")
+	@Path("/{authorId}")
 	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-	public void deleteBook(@PathParam("bookId") Long bookId) {
-		if (!service.deleteBook(bookId)) {
+	public void deleteAuthor(@PathParam("authorId") Long authorId) {
+		if (!service.deleteAuthor(authorId)) {
 			throw new WebApplicationException(Status.NOT_FOUND);
 		}
 	}

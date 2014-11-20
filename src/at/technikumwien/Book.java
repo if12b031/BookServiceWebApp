@@ -2,6 +2,7 @@ package at.technikumwien;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,15 +32,14 @@ public class Book {
 	private String subtitle;
 	private String description;
 	private int pages;
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
 	@JoinTable(
 	      name="book2author",
 	      joinColumns=@JoinColumn(name="fk_book"),
 	      inverseJoinColumns=@JoinColumn(name="fk_author"))
 	private List<Author> authors;
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(
-			name="fk_publisher")
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name="fk_publisher", nullable=false)
 	private Publisher publisher;
 
 	public Book() {}

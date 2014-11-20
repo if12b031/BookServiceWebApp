@@ -5,13 +5,13 @@ import javax.ws.rs.core.MediaType;
 
 public class BookResourceClient {
 	public static void main(String[] args) throws Exception {
-		Book book = ClientBuilder
+		Publisher author = ClientBuilder
 			.newClient()
-			.target("http://localhost:8080/BookServiceWebApp/resources/books")
+			.target("http://localhost:8080/BookServiceWebApp/resources/abc")
 			.path("/{bookId}")
 			.resolveTemplate("bookId", 1)
 			.request(MediaType.APPLICATION_XML)
-			.get(Book.class);
-		System.out.println(book);
+			.get(Publisher.class);
+		System.out.println(author);
 	}
 }

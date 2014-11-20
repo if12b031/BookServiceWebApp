@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "author")
 public class Author {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	private String firstName;
@@ -29,7 +29,7 @@ public class Author {
 	public Author() {}
 	
 	public Author(Long id, String title, String firstName, String lastName,
-			String nationality, char gender, Date birthday) {
+			String nationality, Date birthday) {
 		super();
 		this.id = id;
 		this.title = title;
