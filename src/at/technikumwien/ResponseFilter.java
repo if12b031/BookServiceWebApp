@@ -19,6 +19,4 @@ public class ResponseFilter implements ContainerResponseFilter {
 		cacheControl.setNoCache(true);
 		response.getHeaders().add("Cache-Control", cacheControl);
 	}
-	
-
 }

@@ -1,7 +1,5 @@
 package at.technikumwien;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.ejb.LocalBean;
@@ -18,18 +16,6 @@ public class BookService {
 	private EntityManager em;
 
 	public List<Book> getAllBooks() {
-		/* Insert an Author */
-		Author author = new Author(null, "Title", "Name", "Lastname", "AT", 'm', new Date());
-		em.persist(author);
-		/* Insert a Publisher */
-		Publisher publisher = new Publisher(null, "Publisher", "1220", "AT", "Street", "1");
-		em.persist(publisher);
-		/* Insert a Book*/
-		List<Author> authors = new ArrayList<Author>();
-		authors.add( em. find(Author.class, 1L)); // find Author with ID 1
-		Book book = new Book(null, "ISBN", "Booktitle", "BookSubtitle", "Description", 100, authors, em.find(Publisher.class, 1L));
-		insertBook(book);
-
 		return em.createNamedQuery("Book.selectAll", Book.class).getResultList();
 	}
 
@@ -69,6 +55,36 @@ public class BookService {
 		return q.getResultList();
 	}
 
+	public Book getBook(Long id) {
+		return em.find(Book.class, id);
+	}
+
+	public boolean updateBook(Long id, Book newBook) {
+		Book book = em.find(Book.class, id);
+		if (book == null) {
+			return false;
+		} else {
+			book.setIsbn(newBook.getIsbn());
+			book.setTitle(newBook.getTitle());
+			book.setSubtitle(newBook.getSubtitle());
+			book.setDescription(newBook.getDescription());
+			book.setPages(newBook.getPages());
+			book.setAuthors(newBook.getAuthors());
+			book.setPublisher(newBook.getPublisher());
+			return true;
+		}
+	}
+
+	public boolean deleteBook(Long bookId) {
+		Book book = em.find(Book.class, bookId);
+		if (book == null) {
+			return false;
+		} else {
+			em.remove(book);
+			return true;
+		}
+	}
+
 	private boolean checkInsertBook(Book book){
 		List<Author> authors =  book.getAuthors();
 		Publisher publisher = book.getPublisher();
@@ -101,18 +117,4 @@ public class BookService {
 		}
 		return true;
 	}
-
-	private long getId(Author author) {
-		Query q = em.createQuery("SELECT id FROM Author a WHERE a.firstName = ?1 AND a.lastName = ?2");
-		q.setParameter(1, author.getFirstName());
-		q.setParameter(2, author.getLastName());
-		return (Long)q.getSingleResult(); 
-	}
-
-	private long getId(Publisher publisher) {
-		Query q = em.createQuery("SELECT id FROM Publisher p WHERE p.name = ?1");
-		q.setParameter(1, publisher.getName());
-		return (Long)q.getSingleResult(); 
-	}
-
 }

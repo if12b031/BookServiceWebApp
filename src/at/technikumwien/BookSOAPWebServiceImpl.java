@@ -10,6 +10,10 @@ public class BookSOAPWebServiceImpl implements BookSOAPWebService {
 
 	@Inject
 	private BookService bookService;
+	@Inject
+	private AuthorService authorService;
+	@Inject
+	private PublisherService publisherService;
 
 	@Override
 	public List<Book> getAllBooks() {
@@ -18,12 +22,12 @@ public class BookSOAPWebServiceImpl implements BookSOAPWebService {
 
 	@Override
 	public List<Author> getAllAuthors() {
-		return bookService.getAllAuthors();
+		return authorService.getAllAuthors();
 	}
 
 	@Override
 	public List<Publisher> getAllPublishers() {
-		return bookService.getAllPublishers();
+		return publisherService.getAllPublishers();
 	}
 
 	@Override
@@ -40,5 +44,4 @@ public class BookSOAPWebServiceImpl implements BookSOAPWebService {
 	public List<Book> searchBook(String title) {
 		return bookService.searchBook(title);
 	}
-	
 }

@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQuery(name="Publisher.selectAll", query="SELECT p FROM Publisher p")
 @XmlRootElement
 public class Publisher {
-	
+
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String name;

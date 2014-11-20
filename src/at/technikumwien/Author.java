@@ -27,7 +27,7 @@ public class Author {
 	public Author() {}
 	
 	public Author(Long id, String title, String firstName, String lastName,
-			String nationality, char gender, Date birthday) {
+			String nationality, Date birthday) {
 		super();
 		this.id = id;
 		this.title = title;
