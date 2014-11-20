@@ -12,9 +12,7 @@ public class BookSOAPWebServiceClient1 {
 
 		Service service = Service.create(wsdl, serviceName);
 		BookSOAPWebService port = service.getPort(BookSOAPWebService.class);
-		
-		port.getAllBooks().forEach(System.out::println);
-		port.getAllAuthors().forEach(System.out::println);
-		port.getAllPublishers().forEach(System.out::println);
+
+		port.searchBook("Book").forEach(System.out::println);
 	}
 }

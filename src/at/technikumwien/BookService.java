@@ -16,8 +16,8 @@ import javax.persistence.TypedQuery;
 public class BookService {
 	@PersistenceContext
 	private EntityManager em;
-	
-	public List<Book> getAllBooks(){
+
+	public List<Book> getAllBooks() {
 		/* Insert an Author */
 		Author author = new Author(null, "Title", "Name", "Lastname", "AT", 'm', new Date());
 		em.persist(author);
@@ -65,8 +65,8 @@ public class BookService {
 	public List<Book> searchBook(String title) {
 		TypedQuery<Book> q = em.createQuery("SELECT b FROM Book b WHERE b.title LIKE ?1",
 				Book.class);
-		q.setParameter(1, title);
-		return q.getResultList(); 
+		q.setParameter(1, "%" + title + "%");
+		return q.getResultList();
 	}
 
 	private boolean checkInsertBook(Book book){
@@ -101,4 +101,18 @@ public class BookService {
 		}
 		return true;
 	}
+
+	private long getId(Author author) {
+		Query q = em.createQuery("SELECT id FROM Author a WHERE a.firstName = ?1 AND a.lastName = ?2");
+		q.setParameter(1, author.getFirstName());
+		q.setParameter(2, author.getLastName());
+		return (Long)q.getSingleResult(); 
+	}
+
+	private long getId(Publisher publisher) {
+		Query q = em.createQuery("SELECT id FROM Publisher p WHERE p.name = ?1");
+		q.setParameter(1, publisher.getName());
+		return (Long)q.getSingleResult(); 
+	}
+
 }
