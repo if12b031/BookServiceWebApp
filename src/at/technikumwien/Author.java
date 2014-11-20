@@ -8,12 +8,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 @Entity
 @Table(name="author")
 @NamedQuery(name="Author.selectAll", query="SELECT a FROM Author a")
-@XmlRootElement
+@XmlRootElement(name = "author")
 public class Author {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,7 +48,7 @@ public class Author {
 	}
 
 //	SETTERS & GETTERS
-	
+	@XmlAttribute
 	public Long getId() {
 		return id;
 	}
@@ -54,7 +56,7 @@ public class Author {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	@XmlAttribute
 	public String getTitle() {
 		return title;
 	}
@@ -62,7 +64,7 @@ public class Author {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+	@XmlAttribute
 	public String getFirstName() {
 		return firstName;
 	}
@@ -70,7 +72,7 @@ public class Author {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
+	@XmlAttribute
 	public String getLastName() {
 		return lastName;
 	}
@@ -78,7 +80,7 @@ public class Author {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
+	@XmlAttribute
 	public String getNationality() {
 		return nationality;
 	}
@@ -86,7 +88,7 @@ public class Author {
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
 	}
-
+	@XmlAttribute
 	public Date getBirthday() {
 		return birthday;
 	}

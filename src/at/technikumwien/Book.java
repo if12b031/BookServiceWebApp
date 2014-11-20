@@ -13,12 +13,15 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 @Entity
 @Table(name="book")
 @NamedQuery(name="Book.selectAll", query="SELECT b FROM Book b")
-@XmlRootElement
+@XmlRootElement(name = "book")
 public class Book {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -64,7 +67,7 @@ public class Book {
 	}
 
 //	SETTER & GETTERS
-
+	@XmlAttribute
 	public Long getId() {
 		return id;
 	}
@@ -72,7 +75,7 @@ public class Book {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	@XmlAttribute
 	public String getIsbn() {
 		return isbn;
 	}
@@ -80,7 +83,7 @@ public class Book {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-
+	@XmlAttribute
 	public String getTitle() {
 		return title;
 	}
@@ -88,7 +91,7 @@ public class Book {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+	@XmlAttribute
 	public String getSubtitle() {
 		return subtitle;
 	}
@@ -96,7 +99,7 @@ public class Book {
 	public void setSubtitle(String subtitle) {
 		this.subtitle = subtitle;
 	}
-
+	@XmlAttribute
 	public String getDescription() {
 		return description;
 	}
@@ -104,7 +107,7 @@ public class Book {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
+	@XmlAttribute
 	public int getPages() {
 		return pages;
 	}

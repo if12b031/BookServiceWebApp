@@ -6,12 +6,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 @Entity
 @Table(name="publisher")
 @NamedQuery(name="Publisher.selectAll", query="SELECT p FROM Publisher p")
-@XmlRootElement
+@XmlRootElement(name = "publisher")
 public class Publisher {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,7 +46,7 @@ public class Publisher {
 	}
 	
 //	SETTERS & GETTERS
-
+	@XmlAttribute
 	public Long getId() {
 		return id;
 	}
@@ -51,7 +54,7 @@ public class Publisher {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	@XmlAttribute
 	public String getName() {
 		return name;
 	}
@@ -59,7 +62,7 @@ public class Publisher {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	@XmlAttribute
 	public String getPostcode() {
 		return postCode;
 	}
@@ -67,7 +70,7 @@ public class Publisher {
 	public void setPostcode(String postcode) {
 		this.postCode = postcode;
 	}
-
+	@XmlAttribute
 	public String getCountrycode() {
 		return countryCode;
 	}
@@ -75,7 +78,7 @@ public class Publisher {
 	public void setCountrycode(String countrycode) {
 		this.countryCode = countrycode;
 	}
-
+	@XmlAttribute
 	public String getStreetNumber() {
 		return streetNumber;
 	}
@@ -83,7 +86,7 @@ public class Publisher {
 	public void setStreetNumber(String streetNumber) {
 		this.streetNumber = streetNumber;
 	}
-
+	@XmlAttribute
 	public String getStreetName() {
 		return streetName;
 	}

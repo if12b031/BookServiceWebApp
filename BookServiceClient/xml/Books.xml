@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<books>
+	<book isbn="123245" title="Meins" subtitle="moin" description="moinmoinmoin" 	pages="46" language="german">
+		<publisher name="Stefan" postcode="2345" countrycode="1234"/>
+		<authors>
+			<author firstname="Dieter" lastname="Ulrich" birthdate="20.03.89" />
+			<author firstname="Manfred" lastname="Dürringer" birthdate="24.02.79" />
+		</authors>
+	</book>
+	<book isbn="186745" title="Uns" subtitle="seas" description="hahahaa" 	pages="123" language="english">
+		<publisher name="Stefan" postcode="2345" countrycode="1234"/>
+		<authors>
+			<author firstname="Dieter" lastname="Ulrich" birthdate="20.03.89" />
+			<author firstname="Nobody" lastname="Dotta" birthdate="25.06.73" />
+		</authors>
+	</book>
+</books>
