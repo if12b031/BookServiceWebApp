@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für insertBookResponse complex type.
+ * <p>Java class for insertBookResponse complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="insertBookResponse">
@@ -36,7 +36,7 @@ public class InsertBookResponse {
     protected boolean _return;
 
     /**
-     * Ruft den Wert der return-Eigenschaft ab.
+     * Gets the value of the return property.
      * 
      */
     public boolean isReturn() {
@@ -44,7 +44,7 @@ public class InsertBookResponse {
     }
 
     /**
-     * Legt den Wert der return-Eigenschaft fest.
+     * Sets the value of the return property.
      * 
      */
     public void setReturn(boolean value) {

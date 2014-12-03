@@ -3,26 +3,27 @@ package at.technikumwien.generated;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für publisher complex type.
+ * <p>Java class for publisher complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="publisher">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="countrycode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="postcode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="streetName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="streetNumber" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
+ *       &lt;attribute name="countrycode" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}long" />
+ *       &lt;attribute name="name" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="postcode" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="streetName" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="streetNumber" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -31,25 +32,24 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "publisher", propOrder = {
-    "countrycode",
-    "id",
-    "name",
-    "postcode",
-    "streetName",
-    "streetNumber"
-})
+@XmlType(name = "publisher")
 public class Publisher {
 
+    @XmlAttribute(name = "countrycode")
     protected String countrycode;
+    @XmlAttribute(name = "id")
     protected Long id;
+    @XmlAttribute(name = "name")
     protected String name;
+    @XmlAttribute(name = "postcode")
     protected String postcode;
+    @XmlAttribute(name = "streetName")
     protected String streetName;
+    @XmlAttribute(name = "streetNumber")
     protected String streetNumber;
 
     /**
-     * Ruft den Wert der countrycode-Eigenschaft ab.
+     * Gets the value of the countrycode property.
      * 
      * @return
      *     possible object is
@@ -61,7 +61,7 @@ public class Publisher {
     }
 
     /**
-     * Legt den Wert der countrycode-Eigenschaft fest.
+     * Sets the value of the countrycode property.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +73,7 @@ public class Publisher {
     }
 
     /**
-     * Ruft den Wert der id-Eigenschaft ab.
+     * Gets the value of the id property.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class Publisher {
     }
 
     /**
-     * Legt den Wert der id-Eigenschaft fest.
+     * Sets the value of the id property.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class Publisher {
     }
 
     /**
-     * Ruft den Wert der name-Eigenschaft ab.
+     * Gets the value of the name property.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class Publisher {
     }
 
     /**
-     * Legt den Wert der name-Eigenschaft fest.
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +121,7 @@ public class Publisher {
     }
 
     /**
-     * Ruft den Wert der postcode-Eigenschaft ab.
+     * Gets the value of the postcode property.
      * 
      * @return
      *     possible object is
@@ -133,7 +133,7 @@ public class Publisher {
     }
 
     /**
-     * Legt den Wert der postcode-Eigenschaft fest.
+     * Sets the value of the postcode property.
      * 
      * @param value
      *     allowed object is
@@ -145,7 +145,7 @@ public class Publisher {
     }
 
     /**
-     * Ruft den Wert der streetName-Eigenschaft ab.
+     * Gets the value of the streetName property.
      * 
      * @return
      *     possible object is
@@ -157,7 +157,7 @@ public class Publisher {
     }
 
     /**
-     * Legt den Wert der streetName-Eigenschaft fest.
+     * Sets the value of the streetName property.
      * 
      * @param value
      *     allowed object is
@@ -169,7 +169,7 @@ public class Publisher {
     }
 
     /**
-     * Ruft den Wert der streetNumber-Eigenschaft ab.
+     * Gets the value of the streetNumber property.
      * 
      * @return
      *     possible object is
@@ -181,7 +181,7 @@ public class Publisher {
     }
 
     /**
-     * Legt den Wert der streetNumber-Eigenschaft fest.
+     * Sets the value of the streetNumber property.
      * 
      * @param value
      *     allowed object is

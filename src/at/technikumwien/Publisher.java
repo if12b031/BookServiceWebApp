@@ -14,7 +14,6 @@ import javax.xml.bind.annotation.XmlType;
 @Entity
 @Table(name="publisher")
 @NamedQuery(name="Publisher.selectAll", query="SELECT p FROM Publisher p")
-@XmlRootElement(name = "publisher")
 public class Publisher {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)

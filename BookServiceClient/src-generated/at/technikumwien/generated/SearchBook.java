@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für searchBook complex type.
+ * <p>Java class for searchBook complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="searchBook">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="bookTitle" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,34 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "searchBook", propOrder = {
-    "bookTitle"
+    "arg0"
 })
 public class SearchBook {
 
-    protected String bookTitle;
+    protected String arg0;
 
     /**
-     * Ruft den Wert der bookTitle-Eigenschaft ab.
+     * Gets the value of the arg0 property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getBookTitle() {
-        return bookTitle;
+    public String getArg0() {
+        return arg0;
     }
 
     /**
-     * Legt den Wert der bookTitle-Eigenschaft fest.
+     * Sets the value of the arg0 property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setBookTitle(String value) {
-        this.bookTitle = value;
+    public void setArg0(String value) {
+        this.arg0 = value;
     }
 
 }

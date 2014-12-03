@@ -15,7 +15,6 @@ import javax.xml.bind.annotation.XmlType;
 @Entity
 @Table(name="author")
 @NamedQuery(name="Author.selectAll", query="SELECT a FROM Author a")
-@XmlRootElement(name = "author")
 public class Author {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -64,7 +63,7 @@ public class Author {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	@XmlAttribute
+	@XmlAttribute(name = "firstname")
 	public String getFirstName() {
 		return firstName;
 	}
@@ -72,7 +71,7 @@ public class Author {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-	@XmlAttribute
+	@XmlAttribute(name = "lastname")
 	public String getLastName() {
 		return lastName;
 	}
@@ -88,7 +87,7 @@ public class Author {
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
 	}
-	@XmlAttribute
+	@XmlAttribute(name = "birthdate")
 	public Date getBirthday() {
 		return birthday;
 	}

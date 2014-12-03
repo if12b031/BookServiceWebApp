@@ -3,21 +3,20 @@ package at.technikumwien.generated;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für insertBook complex type.
+ * <p>Java class for insertBook complex type.
  * 
- * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="insertBook">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://technikumwien.at/}book" minOccurs="0"/>
+ *         &lt;element name="arg0" type="{http://technikumwien.at/}book" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,35 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "insertBook", propOrder = {
-    "book"
+    "arg0"
 })
 public class InsertBook {
 
-    @XmlElement(namespace = "http://technikumwien.at/")
-    protected Book book;
+    protected Book arg0;
 
     /**
-     * Ruft den Wert der book-Eigenschaft ab.
+     * Gets the value of the arg0 property.
      * 
      * @return
      *     possible object is
      *     {@link Book }
      *     
      */
-    public Book getBook() {
-        return book;
+    public Book getArg0() {
+        return arg0;
     }
 
     /**
-     * Legt den Wert der book-Eigenschaft fest.
+     * Sets the value of the arg0 property.
      * 
      * @param value
      *     allowed object is
      *     {@link Book }
      *     
      */
-    public void setBook(Book value) {
-        this.book = value;
+    public void setArg0(Book value) {
+        this.arg0 = value;
     }
 
 }

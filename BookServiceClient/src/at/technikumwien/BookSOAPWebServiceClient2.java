@@ -6,7 +6,7 @@ import at.technikumwien.generated.BookSOAPWebService;
 
 public class BookSOAPWebServiceClient2 {
 	public static void main(String[] args) {
-		ClientAuthenticator.setAsDefault("myuser", "topsecret");
+		ClientAuthenticator.setAsDefault("guest", "read");
 		BookSOAPWebServiceImplService service = new BookSOAPWebServiceImplService();
 		BookSOAPWebService port = service.getBookSOAPWebServiceImplPort();
 

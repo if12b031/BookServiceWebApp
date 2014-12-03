@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -116,6 +118,8 @@ public class Book {
 		this.pages = pages;
 	}
 
+	@XmlElementWrapper(name="authors")
+	@XmlElement(name="author")
 	public List<Author> getAuthors() {
 		return authors;
 	}
@@ -124,6 +128,7 @@ public class Book {
 		this.authors = authors;
 	}
 
+	@XmlElement(name="publisher")
 	public Publisher getPublisher() {
 		return publisher;
 	}
