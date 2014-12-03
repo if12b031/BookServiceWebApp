@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType name="book">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
+ *       &lt;all>
  *         &lt;element name="authors" minOccurs="0">
  *           &lt;complexType>
  *             &lt;complexContent>
@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlType;
  *           &lt;/complexType>
  *         &lt;/element>
  *         &lt;element name="publisher" type="{http://technikumwien.at/}publisher" minOccurs="0"/>
- *       &lt;/sequence>
+ *       &lt;/all>
  *       &lt;attribute name="description" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}long" />
  *       &lt;attribute name="isbn" type="{http://www.w3.org/2001/XMLSchema}string" />
@@ -47,12 +47,11 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "book", propOrder = {
-    "authors",
-    "publisher"
+
 })
 public class Book {
 
-    protected Book.Authors authors;
+    protected List<Author> authors;
     protected Publisher publisher;
     @XmlAttribute(name = "description")
     protected String description;
@@ -75,20 +74,20 @@ public class Book {
      *     {@link Book.Authors }
      *     
      */
-    public Book.Authors getAuthors() {
+    public List<Author> getAuthors() {
         return authors;
     }
 
     /**
      * Sets the value of the authors property.
      * 
-     * @param value
+     * @param authorList
      *     allowed object is
      *     {@link Book.Authors }
      *     
      */
-    public void setAuthors(Book.Authors value) {
-        this.authors = value;
+    public void setAuthors(List<Author> authorList) {
+        this.authors = authorList;
     }
 
     /**

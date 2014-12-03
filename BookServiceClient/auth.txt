@@ -1,0 +1,1 @@
+http://stefan:write@localhost:8080/BookServiceWebApp/BookSOAPWebServiceImpl?wsdl

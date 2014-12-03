@@ -15,6 +15,7 @@ import javax.xml.bind.annotation.XmlType;
 @Entity
 @Table(name="author")
 @NamedQuery(name="Author.selectAll", query="SELECT a FROM Author a")
+@XmlType(propOrder={})
 public class Author {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)

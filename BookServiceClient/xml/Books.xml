@@ -3,15 +3,15 @@
 	<book isbn="123245" title="Meins" subtitle="moin" description="moinmoinmoin" 	pages="46" language="german">
 		<publisher name="Stefan" postcode="2345" countrycode="1234"/>
 		<authors>
-			<author firstname="Dieter" lastname="Ulrich" birthdate="20.03.89" />
-			<author firstname="Manfred" lastname="Dürringer" birthdate="24.02.79" />
+			<author firstname="Dieter" lastname="Ulrich" birthdate="1989-11-18T13:08:15.339+01:00" />
+			<author firstname="Manfred" lastname="Dürringer" birthdate = "1989-11-18T13:08:15.339+01:00" />
 		</authors>
 	</book>
 	<book isbn="186745" title="Uns" subtitle="seas" description="hahahaa" 	pages="123" language="english">
 		<publisher name="Stefan" postcode="2345" countrycode="1234"/>
 		<authors>
-			<author firstname="Dieter" lastname="Ulrich" birthdate="20.03.89" />
-			<author firstname="Nobody" lastname="Dotta" birthdate="25.06.73" />
+			<author firstname="Dieter" lastname="Ulrich" birthdate="1989-11-18T13:08:15.339+01:00" />
+			<author firstname="Nobody" lastname="Dotta" birthdate="1989-11-18T13:08:15.339+01:00" />
 		</authors>
 	</book>
 </books>

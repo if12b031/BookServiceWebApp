@@ -2,17 +2,32 @@ package at.technikumwien;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Scanner;
+
+
+
+
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 
+
+
+
+
 import org.w3c.dom.Element;
+
+
+
+
 
 import at.technikumwien.generated.Book;
 import at.technikumwien.generated.BookSOAPWebServiceImplService;
@@ -57,10 +72,19 @@ public class XmlToBooks {
 		    	System.out.println(b.getPublisher());
 		    	b.getAuthors().forEach((a)->{
 		    		at.technikumwien.generated.Author authorTemp = new at.technikumwien.generated.Author();
-		    		authorTemp.setBirthday(a.getBirthday());
-		    		authorTemp.setFirstName(a.getFirstName());
+		    		GregorianCalendar cal = new GregorianCalendar();
+		            cal.setTime(a.getBirthday());
+		            XMLGregorianCalendar birthday;
+					try {
+						birthday = DatatypeFactory.newInstance().newXMLGregorianCalendar(cal);
+						authorTemp.setBirthdate(birthday);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+		    		authorTemp.setFirstname(a.getFirstName());
 		    		authorTemp.setId(a.getId());
-		    		authorTemp.setLastName(a.getLastName());
+		    		authorTemp.setLastname(a.getLastName());
 		    		authorTemp.setNationality(a.getNationality());
 		    		authorTemp.setTitle(a.getTitle());
 		    		authorList.add(authorTemp);

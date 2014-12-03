@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<books description="moinmoinmoin" isbn="12345" pages="46" subtitle="Moin" title="Meins">
-    <id>1</id>
-    <publisher/>
+<books>
+    <book description="moinmoinmoin" id="1" isbn="12345" pages="46" subtitle="Moin" title="Meins">
+        <authors>
+            <author firstname="Stefan"/>
+            <author firstname="Stefan"/>
+        </authors>
+        <publisher/>
+    </book>
+    <book description="moinmoinmoin" id="1" isbn="12345" pages="46" subtitle="Moin" title="Meins">
+        <authors>
+            <author firstname="Stefan"/>
+            <author firstname="Stefan"/>
+        </authors>
+        <publisher/>
+    </book>
+    <book description="moinmoinmoin" id="1" isbn="12345" pages="46" subtitle="Moin" title="Meins">
+        <authors>
+            <author firstname="Stefan"/>
+            <author firstname="Stefan"/>
+        </authors>
+        <publisher/>
+    </book>
+    <book description="moinmoinmoin" id="1" isbn="12345" pages="46" subtitle="Moin" title="Meins">
+        <authors>
+            <author firstname="Stefan"/>
+            <author firstname="Stefan"/>
+        </authors>
+        <publisher/>
+    </book>
 </books>

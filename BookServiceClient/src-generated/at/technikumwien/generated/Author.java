@@ -18,12 +18,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * &lt;complexType name="author">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *       &lt;/sequence>
- *       &lt;attribute name="birthday" type="{http://www.w3.org/2001/XMLSchema}dateTime" />
- *       &lt;attribute name="firstName" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;all>
+ *       &lt;/all>
+ *       &lt;attribute name="birthdate" type="{http://www.w3.org/2001/XMLSchema}dateTime" />
+ *       &lt;attribute name="firstname" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}long" />
- *       &lt;attribute name="lastName" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="lastname" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="nationality" type="{http://www.w3.org/2001/XMLSchema}string" />
  *       &lt;attribute name="title" type="{http://www.w3.org/2001/XMLSchema}string" />
  *     &lt;/restriction>
@@ -34,69 +34,71 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "author")
+@XmlType(name = "author", propOrder = {
+
+})
 public class Author {
 
-    @XmlAttribute(name = "birthday")
+    @XmlAttribute(name = "birthdate")
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar birthday;
-    @XmlAttribute(name = "firstName")
-    protected String firstName;
+    protected XMLGregorianCalendar birthdate;
+    @XmlAttribute(name = "firstname")
+    protected String firstname;
     @XmlAttribute(name = "id")
     protected Long id;
-    @XmlAttribute(name = "lastName")
-    protected String lastName;
+    @XmlAttribute(name = "lastname")
+    protected String lastname;
     @XmlAttribute(name = "nationality")
     protected String nationality;
     @XmlAttribute(name = "title")
     protected String title;
 
     /**
-     * Gets the value of the birthday property.
+     * Gets the value of the birthdate property.
      * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public XMLGregorianCalendar getBirthday() {
-        return birthday;
+    public XMLGregorianCalendar getBirthdate() {
+        return birthdate;
     }
 
     /**
-     * Sets the value of the birthday property.
+     * Sets the value of the birthdate property.
      * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setBirthday(XMLGregorianCalendar value) {
-        this.birthday = value;
+    public void setBirthdate(XMLGregorianCalendar value) {
+        this.birthdate = value;
     }
 
     /**
-     * Gets the value of the firstName property.
+     * Gets the value of the firstname property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
     /**
-     * Sets the value of the firstName property.
+     * Sets the value of the firstname property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setFirstName(String value) {
-        this.firstName = value;
+    public void setFirstname(String value) {
+        this.firstname = value;
     }
 
     /**
@@ -124,27 +126,27 @@ public class Author {
     }
 
     /**
-     * Gets the value of the lastName property.
+     * Gets the value of the lastname property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
     /**
-     * Sets the value of the lastName property.
+     * Sets the value of the lastname property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setLastName(String value) {
-        this.lastName = value;
+    public void setLastname(String value) {
+        this.lastname = value;
     }
 
     /**
