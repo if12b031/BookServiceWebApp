@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<book description="Description" id="1" isbn="ISBN" pages="100" subtitle="Subtitle" title="Book">
+    <authors>
+        <author birthdate="2014-11-20T18:13:26+01:00" firstname="Name" id="1" lastname="Lastname" nationality="AT" title="Title"/>
+        <author birthdate="2014-11-20T18:14:56+01:00" firstname="Name" id="2" lastname="Lastname" nationality="AT" title="Title"/>
+    </authors>
+    <publisher countrycode="AT" id="1" name="Publisher" postcode="1220" streetName="1" streetNumber="Street"/>
+</book>

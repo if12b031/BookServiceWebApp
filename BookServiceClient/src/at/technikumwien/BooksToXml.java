@@ -2,8 +2,6 @@ package at.technikumwien;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -11,7 +9,7 @@ import javax.xml.bind.Marshaller;
 public class BooksToXml {
 	public static void main(String[] args) throws Exception {
 	    Book book = new Book(1L, "12345", "Meins", "Moin",
-				"moinmoinmoin", 46, new <Author>ArrayList(),
+				"moinmoinmoin", 46, new ArrayList<Author>(),
 				new Publisher());
 	    
 	    JAXBContext jaxbContext = JAXBContext.newInstance(Book.class);
