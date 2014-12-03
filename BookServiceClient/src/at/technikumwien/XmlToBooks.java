@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 
 
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -23,7 +24,9 @@ import javax.xml.transform.stream.StreamSource;
 
 
 
+
 import org.w3c.dom.Element;
+
 
 
 
@@ -35,7 +38,9 @@ import at.technikumwien.generated.BookSOAPWebService;
 
 public class XmlToBooks {
 	public static void main(String[] args) {
-	
+		ClientAuthenticator.setAsDefault("stefan", "write");
+		BookSOAPWebServiceImplService service = new BookSOAPWebServiceImplService();
+		BookSOAPWebService port = service.getBookSOAPWebServiceImplPort();	
 		JAXBContext jaxbContext;
 		try {
 			Scanner scanner = new Scanner(System.in);;
@@ -46,9 +51,9 @@ public class XmlToBooks {
 			jaxbContext = JAXBContext.newInstance(Books.class);
 			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 			Books books = (Books) unmarshaller.unmarshal( new File(path) );
-			
+
 		    List<Book> bookList = new ArrayList<Book>();
-		    books.getBooks().forEach((b)->{
+		    books.getBooks().forEach((b)-> {
 		    	//adapt book
 		    	at.technikumwien.generated.Book bookTemp = new at.technikumwien.generated.Book();
 		    	bookTemp.setDescription(b.getDescription());
@@ -102,9 +107,7 @@ public class XmlToBooks {
 		    	System.out.println("Publisher: " + b.getPublisher());
 		    	*/
 		    });
-		    BookSOAPWebServiceImplService service = new BookSOAPWebServiceImplService();
-			BookSOAPWebService port = service.getBookSOAPWebServiceImplPort();
-			//port.insertBooks(bookList);
+			port.insertBooks(bookList);
 			System.out.println("...succesfully inserted books!");
 			scanner.close();
 		} catch (JAXBException e) {

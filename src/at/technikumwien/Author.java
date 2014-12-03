@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @Entity
+@XmlRootElement(name="author")
 @Table(name="author")
 @NamedQuery(name="Author.selectAll", query="SELECT a FROM Author a")
 @XmlType(propOrder={})

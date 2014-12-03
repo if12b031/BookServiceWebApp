@@ -1,5 +1,6 @@
 package at.technikumwien;
 
+import java.io.File;
 import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
@@ -9,6 +10,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 
 import org.jboss.ejb3.annotation.SecurityDomain;
 
