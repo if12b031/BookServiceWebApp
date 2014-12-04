@@ -29,9 +29,7 @@ public class AuthorService {
 
 	@RolesAllowed("BSWrite")
 	public void insertAuthors(List<Author> authors) {
-		em.getTransaction().begin();
 		authors.forEach((author) -> em.persist(author));
-		em.getTransaction().commit();
 	}
 
 	@RolesAllowed({"BSRead","BSWrite"})
@@ -52,6 +50,7 @@ public class AuthorService {
 			return true;
 		}
 	}
+
 	@RolesAllowed("BSWrite")
 	public boolean deleteAuthor(Long authorId) {
 		Author author = em.find(Author.class, authorId);

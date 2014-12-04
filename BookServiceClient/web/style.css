@@ -1,0 +1,37 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, sans-serif;
+}
+h1 {
+	text-align: center;
+}
+#wrapper {
+	margin-top: 2%;
+}
+#info {
+	display: none;
+	position: absolute;
+	width: 800px;
+	height: 200px;
+	background-color: lightgrey;
+	margin: auto;
+	left: 0px;
+	right: 0px;
+}
+.tbl {
+	border-collapse: collapse;
+	border: none;
+	text-align: center;
+	margin: 2% auto 0% auto;
+}
+#wrapper .tbl td {
+	padding: 5px 10px;
+	cursor: pointer;
+}
+#info .tbl td {
+	padding: 5px 10px;
+}
+#info .tbl {
+	width: 100%;
+}

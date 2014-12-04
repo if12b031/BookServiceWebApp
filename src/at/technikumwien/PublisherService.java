@@ -26,16 +26,17 @@ public class PublisherService {
 	public void insertPublisher(Publisher publisher) {
 		em.persist(publisher);
 	}
+
 	@RolesAllowed("BSWrite")
 	public void insertPublishers(List<Publisher> publishers) {
-		em.getTransaction().begin();
 		publishers.forEach((publisher) -> em.persist(publisher));
-		em.getTransaction().commit();
 	}
+
 	@RolesAllowed({"BSRead","BSWrite"})
 	public Publisher getPublisher(Long id) {
 		return em.find(Publisher.class, id);
 	}
+
 	@RolesAllowed("BSWrite")
 	public boolean updatePublisher(Long id, Publisher newPublisher) {
 		Publisher publisher = em.find(Publisher.class, id);

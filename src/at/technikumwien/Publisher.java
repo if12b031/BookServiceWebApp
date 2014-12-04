@@ -7,14 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
 
 @Entity
 @Table(name="publisher")
 @NamedQuery(name="Publisher.selectAll", query="SELECT p FROM Publisher p")
 @XmlType(propOrder={})
+@XmlRootElement(name="publisher")
 public class Publisher {
 
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)

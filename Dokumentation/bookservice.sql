@@ -27,8 +27,8 @@ DROP TABLE IF EXISTS `author`;
 CREATE TABLE `author` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) DEFAULT NULL,
-  `firstName` varchar(100) NOT NULL,
-  `lastName` varchar(100) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
   `birthday` datetime DEFAULT NULL,
   `nationality` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -112,10 +112,10 @@ DROP TABLE IF EXISTS `publisher`;
 CREATE TABLE `publisher` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `streetName` varchar(100) NOT NULL,
-  `streetNumber` varchar(45) NOT NULL,
-  `postCode` varchar(10) NOT NULL,
-  `countryCode` varchar(10) NOT NULL,
+  `streetname` varchar(100) NOT NULL,
+  `streetnumber` varchar(45) NOT NULL,
+  `postcode` varchar(10) NOT NULL,
+  `countrycode` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;

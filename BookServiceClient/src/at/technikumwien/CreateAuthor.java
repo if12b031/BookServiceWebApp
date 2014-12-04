@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
 public class CreateAuthor {
@@ -48,10 +49,14 @@ public class CreateAuthor {
 		confirmation = scanner.nextLine();
 
 		if (confirmation.equals("y")) {
-			ClientBuilder.newClient().target("http://localhost:8080/BookServiceWebApp/resources/authors")
-			.request()
-			.post(Entity.entity(author, MediaType.APPLICATION_JSON), Author.class);
 			System.out.print("Sending Request..." + System.lineSeparator());
+			WebTarget target = ClientBuilder
+					.newClient()
+					.register(new RequestFilter("georg", "write"))
+					.target("http://localhost:8080/BookServiceWebApp/resources/authors");
+			target
+				.request()
+				.post(Entity.entity(author, MediaType.APPLICATION_JSON), Author.class);
 		}
 
 		// Program complete

@@ -1,6 +1,5 @@
 package at.technikumwien;
 
-import java.io.File;
 import java.util.List;
 
 import javax.annotation.security.RolesAllowed;
@@ -10,9 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 
 import org.jboss.ejb3.annotation.SecurityDomain;
 
@@ -27,14 +23,7 @@ public class BookService {
 	public List<Book> getAllBooks() {
 		return em.createNamedQuery("Book.selectAll", Book.class).getResultList();
 	}
-	@RolesAllowed({"BSRead","BSWrite"})
-	public List<Author> getAllAuthors() {
-		return em.createNamedQuery("Author.selectAll", Author.class).getResultList();
-	}
-	@RolesAllowed({"BSRead","BSWrite"})
-	public List<Publisher> getAllPublishers() {
-		return em.createNamedQuery("Publisher.selectAll", Publisher.class).getResultList();
-	}
+
 	@RolesAllowed({"BSWrite"})
 	public boolean insertBook(Book book) {
 		if (!checkInsertBook(book)) {
@@ -44,6 +33,7 @@ public class BookService {
 			return true;
 		}
 	}
+
 	@RolesAllowed({"BSWrite"})
 	public boolean insertBooks(List<Book> books) {
 		for (int i = 0; i < books.size(); i++) {
@@ -51,11 +41,10 @@ public class BookService {
 				return false;
 			}
 		}
-		em.getTransaction().begin();
 		books.forEach((book) -> em.persist(book));
-		em.getTransaction().commit();
 		return true;
 	}
+
 	@RolesAllowed({"BSRead","BSWrite"})
 	public List<Book> searchBook(String title) {
 		TypedQuery<Book> q = em.createQuery("SELECT b FROM Book b WHERE b.title LIKE ?1",
@@ -63,10 +52,12 @@ public class BookService {
 		q.setParameter(1, "%" + title + "%");
 		return q.getResultList();
 	}
+
 	@RolesAllowed({"BSRead","BSWrite"})
 	public Book getBook(Long id) {
 		return em.find(Book.class, id);
 	}
+
 	@RolesAllowed({"BSWrite"})
 	public boolean updateBook(Long id, Book newBook) {
 		Book book = em.find(Book.class, id);
@@ -83,6 +74,7 @@ public class BookService {
 			return true;
 		}
 	}
+
 	@RolesAllowed({"BSWrite"})
 	public boolean deleteBook(Long bookId) {
 		Book book = em.find(Book.class, bookId);
@@ -98,12 +90,13 @@ public class BookService {
 		List<Author> authors =  book.getAuthors();
 		Publisher publisher = book.getPublisher();
 		long countPublisher = 0;
-		long countFirstName = 0;
-		long countLastName = 0;
+		long countAuthor = 0;
 
 		// Check if Publisher exists
-		Query q = em.createQuery("SELECT COUNT(p.name) FROM Publisher p WHERE p.name = ?1");
+		Query q = em.createQuery("SELECT COUNT(*) FROM Publisher p WHERE p.name = ?1 AND p.streetname = ?2 AND p.streetnumber = ?3");
 		q.setParameter(1, publisher.getName());
+		q.setParameter(2, publisher.getStreetName());
+		q.setParameter(3, publisher.getStreetNumber());
 		countPublisher = (Long) q.getSingleResult();
 		if (countPublisher < 1) {
 			return false;
@@ -112,15 +105,12 @@ public class BookService {
 		for (int i = 0; i < authors.size(); i++) {
 			Author author = authors.get(i);
 			// Search for firstName
-			q = em.createQuery("SELECT COUNT(a.firstName) FROM Author a WHERE a.firstName = ?1");
+			q = em.createQuery("SELECT COUNT(*) FROM Author a WHERE a.firstName = ?1 AND a.lastname = ?2 AND a.birthday = ?3");
 			q.setParameter(1, author.getFirstName());
-			countFirstName = (Long) q.getSingleResult();
-			// Search for lastName
-			q = em.createQuery("SELECT COUNT(a.lastName) FROM Author a WHERE a.lastName = ?1");
-			q.setParameter(1, author.getLastName());
-			countLastName = (Long) q.getSingleResult();
-
-			if (countFirstName < 1 || countLastName < 1) {
+			q.setParameter(2, author.getLastName());
+			q.setParameter(3, author.getBirthday());
+			countAuthor = (Long) q.getSingleResult();
+			if (countAuthor < 1) {
 				return false;
 			}
 		}

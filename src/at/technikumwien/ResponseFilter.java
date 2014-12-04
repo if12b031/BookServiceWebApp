@@ -14,9 +14,12 @@ public class ResponseFilter implements ContainerResponseFilter {
 	@Override
 	public void filter(ContainerRequestContext request,
 			ContainerResponseContext response) throws IOException {
-		response.getHeaders().add("Access-Control-Allow-Origin","*");
 		CacheControl cacheControl = new CacheControl();
-		cacheControl.setNoCache(true);
+		response.getHeaders().add("Access-Control-Allow-Origin", "*");
+		response.getHeaders().add("Access-Control-Allow-Headers", "origin, content-type, accept, authorization");
+		response.getHeaders().add("Access-Control-Allow-Credentials", "true");
+		response.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
+		response.getHeaders().add("Access-Control-Max-Age", "1209600");
 		response.getHeaders().add("Cache-Control", cacheControl);
 	}
 }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="lib/jquery.js"></script>
+<script>
+var Username = "georg";
+var Password = "write";
+function getAllPublishers() {
+	$.ajax({
+		dataType: "json",
+		url: "http://localhost:8080/BookServiceWebApp/resources/publishers/all",
+		type: "GET",
+		username: Username,
+		password: Password,
+		headers: {
+	    	Accept: "application/json"
+		},
+		success: function(data) {
+			var html = "";
+			$.each(data, function(key, val) {
+				html += "<tr id='" + val.id + "'>"
+					+ "<td>" + val.name + "</td>"
+					+ "</tr>";
+			});
+			html = "<table class='tbl'>" + html + "</table>";
+			$("#wrapper").append(html);
+		}
+	});
+}
+
+function getPublisher(id) {
+	$.ajax({
+		dataType: "json",
+		url: "http://localhost:8080/BookServiceWebApp/resources/publishers/" + id,
+		type: "GET",
+		username: Username,
+		password: Password,
+		headers: {
+	    	Accept: "application/json"
+		},
+		success: function(data) {
+			$("#info").html("");
+			var html = "";
+			html += "<tr>"
+				+ "<th>ID</th>"
+				+ "<th>Name</th>"
+				+ "<th>Street</th>"
+				+ "<th>Number</th>"
+				+ "<th>Postcode</th>"
+				+ "<th>Country</th>"
+				+ "</tr>"
+				+ "<tr>"
+				+ "<td>" + data.id + "</td>"
+				+ "<td>" + data.name + "</td>"
+				+ "<td>" + data.streetName + "</td>"
+				+ "<td>" + data.streetNumber + "</td>"
+				+ "<td>" + data.postcode + "</td>"
+				+ "<td>" + data.countrycode + "</td>"
+				+ "</tr>";
+			html = "<table class='tbl'>" + html + "</table>";
+			$("#info").append(html);
+		}
+	});
+}
+
+$(document).ready(function() {
+	getAllPublishers();
+
+	$("#wrapper").mouseup(function(e) {
+		var container = $("#info");
+
+		if (!container.is(e.target) // if the target of the click isn't the container...
+			&& container.has(e.target).length === 0) // ... nor a descendant of the container
+		{
+			container.hide();
+		}
+	});
+
+	$("#wrapper").on("click", ".tbl td", function(e) {
+		$("#info").show();
+		$("#info").css("top", e.clientY);
+		getPublisher($(this).parent().attr("id"));
+	});
+
+	$("#wrapper").on({
+		mouseenter: function() {
+			$(this).parent().css("background-color", "lightgrey");
+		},
+		mouseleave: function() {
+			$(this).parent().css("background-color", "white");
+		}
+	}, ".tbl td");
+});
+</script>
+</head>
+<body>
+<div id="info"></div>
+<div id="wrapper">
+<h1>All Publishers!</h1>
+</div>
+</body>
+</html>
