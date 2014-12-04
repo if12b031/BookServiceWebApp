@@ -15,18 +15,25 @@ public class BookResourceClient {
 				.register(new RequestFilter("georg", "write"))
 				.target("http://localhost:8080/BookServiceWebApp/resources/");
 
-		Book b = target
-				.path("books/{id}")
+//		Book p = target
+//				.path("books/{id}")
+//				.resolveTemplate("id", 1)
+//				.request(MediaType.APPLICATION_XML)
+//				.get(Book.class);
+
+		Publisher p = target
+				.path("publishers/{id}")
 				.resolveTemplate("id", 1)
 				.request(MediaType.APPLICATION_XML)
-				.get(Book.class);
-		JAXBContext jaxbContext = JAXBContext.newInstance(Book.class);
+				.get(Publisher.class);
+	
+		JAXBContext jaxbContext = JAXBContext.newInstance(Publisher.class);
 	    Marshaller marshaller = jaxbContext.createMarshaller();
 
 	    marshaller.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
 	    marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-	    marshaller.marshal(b, System.out);
-	    marshaller.marshal(b, new File("xml/book_tmp.xml"));
+	    marshaller.marshal(p, System.out);
+	    marshaller.marshal(p, new File("xml/publisher_tmp.xml"));
 	}
 }

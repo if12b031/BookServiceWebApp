@@ -29,7 +29,7 @@ CREATE TABLE `author` (
   `title` varchar(45) DEFAULT NULL,
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
-  `birthday` datetime DEFAULT NULL,
+  `birthday` datetime NOT NULL,
   `nationality` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -112,8 +112,8 @@ DROP TABLE IF EXISTS `publisher`;
 CREATE TABLE `publisher` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `streetname` varchar(100) NOT NULL,
-  `streetnumber` varchar(45) NOT NULL,
+  `streetname` varchar(100) DEFAULT NULL,
+  `streetnumber` varchar(45) DEFAULT NULL,
   `postcode` varchar(10) NOT NULL,
   `countrycode` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
@@ -138,4 +138,37 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+DROP TABLE IF EXISTS user_role;
+DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS role;
+
+CREATE TABLE user (
+  userid INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(25) NOT NULL,
+  password VARCHAR(128) NOT NULL
+);
+
+CREATE TABLE role (
+  roleid INT AUTO_INCREMENT PRIMARY KEY,
+  rolename VARCHAR(25) NOT NULL
+);
+
+CREATE TABLE user_role (
+  userroleid INT AUTO_INCREMENT PRIMARY KEY,
+  userid INT NOT NULL,
+  roleid INT NOT NULL,
+  FOREIGN KEY (userid) REFERENCES user(userid),
+  FOREIGN KEY (roleid) REFERENCES role(roleid)
+);
+
+INSERT INTO user (userid, username, password) VALUES (1, 'stefan', SHA2('write', 512));
+INSERT INTO user (userid, username, password) VALUES (2, 'georg', SHA2('write', 512));
+INSERT INTO user (userid, username, password) VALUES (3, 'guest', SHA2('read', 512));
+
+INSERT INTO role (roleid, rolename) VALUES (1, 'BSWrite');
+INSERT INTO role (roleid, rolename) VALUES (2, 'BSRead');
+
+INSERT INTO user_role (userid, roleid) VALUES (1, 1);
+INSERT INTO user_role (userid, roleid) VALUES (2, 1);
+INSERT INTO user_role (userid, roleid) VALUES (3, 2);
 -- Dump completed on 2014-10-20 17:47:25

@@ -22,9 +22,9 @@ public class Publisher {
 	private Long id;
 	private String name;
 	private String postCode;
-	private String countryCode;
-	private String streetNumber;
-	private String streetName;
+	private String countrycode;
+	private String streetnumber;
+	private String streetname;
 	
 	public Publisher() {}
 	
@@ -34,16 +34,16 @@ public class Publisher {
 		this.id = id;
 		this.name = name;
 		this.postCode = postcode;
-		this.countryCode = countrycode;
-		this.streetNumber = streetNumber;
-		this.streetName = streetName;
+		this.countrycode = countrycode;
+		this.streetnumber = streetNumber;
+		this.streetname = streetName;
 	}
 
 	@Override
 	public String toString() {
 		return "Publisher [id=" + id + ", name=" + name + ", postCode="
-				+ postCode + ", countryCode=" + countryCode + ", streetNumber="
-				+ streetNumber + ", streetName=" + streetName + "]";
+				+ postCode + ", countryCode=" + countrycode + ", streetNumber="
+				+ streetnumber + ", streetName=" + streetname + "]";
 	}
 	
 //	SETTERS & GETTERS
@@ -73,26 +73,26 @@ public class Publisher {
 	}
 	@XmlAttribute
 	public String getCountrycode() {
-		return countryCode;
+		return countrycode;
 	}
 
 	public void setCountrycode(String countrycode) {
-		this.countryCode = countrycode;
+		this.countrycode = countrycode;
 	}
 	@XmlAttribute
 	public String getStreetNumber() {
-		return streetNumber;
+		return streetnumber;
 	}
 
 	public void setStreetNumber(String streetNumber) {
-		this.streetNumber = streetNumber;
+		this.streetnumber = streetNumber;
 	}
 	@XmlAttribute
 	public String getStreetName() {
-		return streetName;
+		return streetname;
 	}
 
 	public void setStreetName(String streetName) {
-		this.streetName = streetName;
+		this.streetname = streetName;
 	}	
 }

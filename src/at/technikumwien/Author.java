@@ -22,8 +22,8 @@ public class Author {
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	private String firstName;
-	private String lastName;
+	private String firstname;
+	private String lastname;
 	private String nationality;
 	private Date birthday;
 	
@@ -34,8 +34,8 @@ public class Author {
 		super();
 		this.id = id;
 		this.title = title;
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.firstname = firstName;
+		this.lastname = lastName;
 		this.nationality = nationality;
 		this.birthday = birthday;
 	}
@@ -43,7 +43,7 @@ public class Author {
 	@Override
 	public String toString() {
 		return "Author [id=" + id + ", title=" + title + ", firstName="
-				+ firstName + ", lastName=" + lastName + ", nationality="
+				+ firstname + ", lastName=" + lastname + ", nationality="
 				+ nationality + ", birthday=" + birthday
 				+ "]";
 	}
@@ -67,19 +67,19 @@ public class Author {
 	}
 	@XmlAttribute(name = "firstname")
 	public String getFirstName() {
-		return firstName;
+		return firstname;
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstname = firstName;
 	}
 	@XmlAttribute(name = "lastname")
 	public String getLastName() {
-		return lastName;
+		return lastname;
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastname = lastName;
 	}
 	@XmlAttribute
 	public String getNationality() {
