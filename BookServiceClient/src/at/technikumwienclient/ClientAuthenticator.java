@@ -1,4 +1,4 @@
-package at.technikumwien;
+package at.technikumwienclient;
 
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;

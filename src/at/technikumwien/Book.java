@@ -24,13 +24,22 @@ import javax.xml.bind.annotation.XmlType;
 @Table(name="book")
 @NamedQuery(name="Book.selectAll", query="SELECT b FROM Book b")
 @XmlRootElement(name="book")
-@XmlType(propOrder={})
+@XmlType(propOrder={"isbn",
+		"title",
+	    "subtitle",
+	    "description",
+	    "pages",
+	    "language",
+	    "publisher",
+	    "authors"})
 public class Book {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Long id;
 	private String isbn;
 	private String title;
+    private String language;
 	private String subtitle;
 	private String description;
 	private int pages;
@@ -42,11 +51,12 @@ public class Book {
 	private List<Author> authors;
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name="fk_publisher", nullable=false)
+	
 	private Publisher publisher;
 
 	public Book() {}
 
-	public Book(Long id, String isbn, String title, String subtitle,
+	public Book(Long id, String isbn, String title, String subtitle,String language,
 			String description, int pages, List<Author> authors,
 			Publisher publisher) {
 		super();
@@ -58,14 +68,15 @@ public class Book {
 		this.pages = pages;
 		this.authors = authors;
 		this.publisher = publisher;
+		this.language = language;
 	}
 	
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", isbn=" + isbn + ", title=" + title
-				+ ", subtitle=" + subtitle + ", description=" + description
-				+ ", pages=" + pages + ", authors=" + authors + ", publisher="
-				+ publisher + "]";
+				+ ", language=" + language + ", subtitle=" + subtitle
+				+ ", description=" + description + ", pages=" + pages
+				+ ", authors=" + authors + ", publisher=" + publisher + "]";
 	}
 
 //	SETTER & GETTERS
@@ -102,6 +113,14 @@ public class Book {
 		this.subtitle = subtitle;
 	}
 	@XmlAttribute
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+	@XmlAttribute
 	public String getDescription() {
 		return description;
 	}
@@ -117,7 +136,6 @@ public class Book {
 	public void setPages(int pages) {
 		this.pages = pages;
 	}
-
 	@XmlElementWrapper(name="authors")
 	@XmlElement(name="author")
 	public List<Author> getAuthors() {
@@ -127,7 +145,6 @@ public class Book {
 	public void setAuthors(List<Author> authors) {
 		this.authors = authors;
 	}
-
 	@XmlElement(name="publisher")
 	public Publisher getPublisher() {
 		return publisher;

@@ -1,4 +1,4 @@
-package at.technikumwien;
+package at.technikumwienclient;
 
 import at.technikumwien.generated.BookSOAPWebServiceImplService;
 import at.technikumwien.generated.BookSOAPWebService;

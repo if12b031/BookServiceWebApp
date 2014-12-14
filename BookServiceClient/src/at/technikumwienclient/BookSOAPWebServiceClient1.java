@@ -1,9 +1,11 @@
-package at.technikumwien;
+package at.technikumwienclient;
 
 import java.net.URL;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
+
+import at.technikumwien.BookSOAPWebService;
 
 public class BookSOAPWebServiceClient1 {
 	public static void main(String[] args) throws Exception {

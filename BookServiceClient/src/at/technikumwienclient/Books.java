@@ -1,4 +1,4 @@
-package at.technikumwien;
+package at.technikumwienclient;
 
 import java.util.List;
 
@@ -7,13 +7,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import at.technikumwien.generated.Book;
+
 @XmlRootElement(name = "books")
 @XmlAccessorType (XmlAccessType.FIELD)
 public class Books
 {
+	@XmlElement(name="book")
     public List<Book> book = null;
- 
-    @XmlElement(name = "book")
+
     public List<Book> getBooks() {
         return book;
     }

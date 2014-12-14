@@ -1,4 +1,4 @@
-package at.technikumwien;
+package at.technikumwienclient;
 
 import java.io.File;
 
@@ -7,6 +7,8 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
+
+import at.technikumwien.Publisher;
 
 public class BookResourceClient {
 	public static void main(String[] args) throws Exception {

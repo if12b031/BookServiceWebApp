@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
 <books>
-    <book description="moinmoinmoin" id="1" isbn="12345" pages="46" subtitle="Moin" title="Meins">
+    <book isbn="1231231238" title="Java EE 7" subtitle="Einführung für Studierende" description="Dieses Buch führt Studierende in die Java EE 7-Plattform ein." pages="987">
+        <publisher countrycode="AT" name="IT-Verlag" postcode="1010"/>
         <authors>
-            <author firstname="Stefan"/>
-            <author firstname="Stefan"/>
+            <author birthdate="1975-07-09T00:00:00+01:00" firstname="Siegfried" lastname="Maier"/>
         </authors>
-        <publisher/>
     </book>
-    <book description="moinmoinmoin" id="1" isbn="12345" pages="46" subtitle="Moin" title="Meins">
+    <book isbn="4564564560" title=".NET 4.5" subtitle="Introduction for Students" description="This book introduces the .NET 4.5 platform to students." pages="567">
+        <publisher countrycode="DE" name="lion.press" postcode="60599"/>
         <authors>
-            <author firstname="Stefan"/>
-            <author firstname="Stefan"/>
+            <author birthdate="1955-01-01T00:00:00+01:00" firstname="Bernhard" lastname="Tigerfels"/>
+            <author birthdate="1981-05-05T00:00:00+02:00" firstname="Claudia" lastname="Sonnenschein"/>
         </authors>
-        <publisher/>
     </book>
-    <book description="moinmoinmoin" id="1" isbn="12345" pages="46" subtitle="Moin" title="Meins">
+    <book isbn="1231231238" title="Java EE 7" subtitle="Einführung für Studierende" description="Dieses Buch führt Studierende in die Java EE 7-Plattform ein." pages="987">
+        <publisher countrycode="AT" name="IT-Verlag" postcode="1010"/>
         <authors>
-            <author firstname="Stefan"/>
-            <author firstname="Stefan"/>
+            <author birthdate="1975-07-09T00:00:00+01:00" firstname="Siegfried" lastname="Maier"/>
         </authors>
-        <publisher/>
     </book>
-    <book description="moinmoinmoin" id="1" isbn="12345" pages="46" subtitle="Moin" title="Meins">
+    <book isbn="4564564560" title=".NET 4.5" subtitle="Introduction for Students" description="This book introduces the .NET 4.5 platform to students." pages="567">
+        <publisher countrycode="DE" name="lion.press" postcode="60599"/>
         <authors>
-            <author firstname="Stefan"/>
-            <author firstname="Stefan"/>
+            <author birthdate="1955-01-01T00:00:00+01:00" firstname="Bernhard" lastname="Tigerfels"/>
+            <author birthdate="1981-05-05T00:00:00+02:00" firstname="Claudia" lastname="Sonnenschein"/>
         </authors>
-        <publisher/>
     </book>
 </books>

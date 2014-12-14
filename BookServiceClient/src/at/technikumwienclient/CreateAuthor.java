@@ -1,4 +1,4 @@
-package at.technikumwien;
+package at.technikumwienclient;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,6 +8,8 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
+
+import at.technikumwien.Author;
 
 public class CreateAuthor {
 
